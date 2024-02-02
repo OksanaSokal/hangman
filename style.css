@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Merriweather:wght@700&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Merriweather';
+  font-size: 30px;
+  background-color: rgb(203, 193, 193);
+}
+
+.container {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 45px;
+  margin: 20px 0;
+}
+.gallows {
+  position: relative;
+  width: 50%;
+}
+
+.gallows-box {
+  max-width: 350px;
+  max-height: 580px;
+  overflow: hidden;
+}
+
+.gallows-image {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 95px;
+}
+.keyboard {
+  width: 50%;
+  margin-top: 120px;
+}
+
+.question-box {
+  text-align: center;
+  margin: 0px 20px;
+}
+
+.counter-box {
+  margin: 50px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.counter-phrase {
+  font-family: 'Merriweather';
+  font-size: 30px;
+  margin: 0;
+}
+
+.keyboard-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.key {
+  padding-top: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  border: 2px solid rgb(59, 58, 58);
+  border-radius: 8px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.key span {
+  display: block;
+}
+
+.disabled-key {
+  background-color: rgb(154, 154, 152);
+}
+
+.letter-wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.letter-box {
+  border-bottom: 3px solid black;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.guessed-letter {
+  border-bottom: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(30, 27, 27, 0.8);
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  width: 800px;
+  height: 600px;
+  background-color: rgb(220, 220, 215);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  opacity: 0.9;
+}
+
+.modal-title {
+  text-align: center;
+}
+
+.modal-button {
+  border: 2px solid black;
+  padding: 20px 35px;
+  font-size: 25px;
+  border-radius: 15px;
+  width: 400px;
+}
+
+@media (max-width: 890px) {
+  .container {
+    gap: 30px;
+  }
+  h1,
+  .question-box {
+    font-size: 30px;
+  }
+  .gallows-box {
+    max-width: 300px;
+  }
+  .canvas {
+    left: -40px;
+    margin-top: 55px;
+  }
+  .letter-box {
+    width: 35px;
+    height: 35px;
+  }
+  .letter-wrap {
+    font-size: 20px;
+  }
+  .key {
+    padding-top: 5px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 770px) {
+  .keyboard {
+    width: 50%;
+    margin-top: 80px;
+  }
+  .counter-box {
+    margin: 25px 0px;
+    font-size: 18px;
+  }
+  .counter-phrase {
+    font-size: 18px;
+  }
+  h1,
+  .question-box {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  h1 {
+    margin-bottom: 15px;
+  }
+  .canvas {
+    margin-top: 40px;
+  }
+  .container {
+    gap: 20px;
+  }
+  .gallows-box {
+    height: 400px;
+  }
+  .letter-box {
+    width: 30px;
+    height: 30px;
+  }
+  .key {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .modal-box {
+    width: 500px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 640px) {
+  .letter-wrap {
+    margin-bottom: 20px;
+  }
+  .canvas {
+    margin-top: 35px;
+    left: -45px;
+  }
+}
+@media (max-width: 600px) {
+  .canvas {
+    margin-top: 25px;
+    left: -70px;
+  }
+}
+@media (max-width: 550px) {
+  .canvas {
+    margin-top: 40px;
+    left: -40px;
+  }
+  .container {
+    flex-direction: column;
+    position: relative;
+  }
+  .keyboard {
+    margin-top: -10px;
+    width: 100%;
+    z-index: 3;
+  }
+  .gallows {
+    width: 100%;
+  }
+  .modal-box {
+    width: 400px;
+  }
+  .modal-button {
+    width: 200px;
+  }
+}
+@media (max-width: 430px) {
+  .modal-box {
+    width: 340px;
+    font-size: 20px;
+  }
+  .modal-button {
+    padding: 10px 30px;
+  }
+}
